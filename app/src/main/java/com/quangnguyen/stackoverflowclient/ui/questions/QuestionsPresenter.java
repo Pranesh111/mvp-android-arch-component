@@ -84,6 +84,7 @@ public class QuestionsPresenter implements QuestionsContract.Presenter, Lifecycl
         .filter(question -> question.getTitle().toLowerCase().contains(questionTitle.toLowerCase()))
         .toList()
         .toFlowable()
+
         .subscribeOn(ioScheduler)
         .observeOn(uiScheduler)
         .subscribe(questions -> {
